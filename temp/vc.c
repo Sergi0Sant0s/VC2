@@ -33,9 +33,9 @@ const char results[50] = "results/";
 #pragma region Funcoes ALOCAR E LIBERTAR UMA IMAGEM
 
 // Alocar mem�ria para uma imagem
-IVC *vc_image_new(int width, int height, int channels, int levels)
+IVC* vc_image_new(int width, int height, int channels, int levels)
 {
-	IVC *image = (IVC *)malloc(sizeof(IVC));
+	IVC* image = (IVC*)malloc(sizeof(IVC));
 
 	if (image == NULL)
 		return NULL;
@@ -47,7 +47,7 @@ IVC *vc_image_new(int width, int height, int channels, int levels)
 	image->channels = channels;
 	image->levels = levels;
 	image->bytesperline = image->width * image->channels;
-	image->data = (unsigned char *)malloc(image->width * image->height * image->channels * sizeof(char));
+	image->data = (unsigned char*)malloc(image->width * image->height * image->channels * sizeof(char));
 
 	if (image->data == NULL)
 	{
@@ -58,7 +58,7 @@ IVC *vc_image_new(int width, int height, int channels, int levels)
 }
 
 // Libertar mem�ria de uma imagem
-IVC *vc_image_free(IVC *image)
+IVC* vc_image_free(IVC* image)
 {
 	if (image != NULL)
 	{
@@ -79,9 +79,9 @@ IVC *vc_image_free(IVC *image)
 //    FUN��ES: LEITURA E ESCRITA DE IMAGENS (PBM, PGM E PPM)
 //++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
-char *netpbm_get_token(FILE *file, char *tok, int len)
+char* netpbm_get_token(FILE* file, char* tok, int len)
 {
-	char *t;
+	char* t;
 	int c;
 
 	for (;;)
@@ -116,12 +116,12 @@ char *netpbm_get_token(FILE *file, char *tok, int len)
 	return tok;
 }
 
-long int unsigned_char_to_bit(unsigned char *datauchar, unsigned char *databit, int width, int height)
+long int unsigned_char_to_bit(unsigned char* datauchar, unsigned char* databit, int width, int height)
 {
 	int x, y;
 	int countbits;
 	long int pos, counttotalbytes;
-	unsigned char *p = databit;
+	unsigned char* p = databit;
 
 	*p = 0;
 	countbits = 1;
@@ -160,12 +160,12 @@ long int unsigned_char_to_bit(unsigned char *datauchar, unsigned char *databit, 
 	return counttotalbytes;
 }
 
-void bit_to_unsigned_char(unsigned char *databit, unsigned char *datauchar, int width, int height)
+void bit_to_unsigned_char(unsigned char* databit, unsigned char* datauchar, int width, int height)
 {
 	int x, y;
 	int countbits;
 	long int pos;
-	unsigned char *p = databit;
+	unsigned char* p = databit;
 
 	countbits = 1;
 
@@ -198,11 +198,11 @@ void bit_to_unsigned_char(unsigned char *databit, unsigned char *datauchar, int 
 	}
 }
 
-IVC *vc_read_image(char *filename)
+IVC* vc_read_image(char* filename)
 {
-	FILE *file = NULL;
-	IVC *image = NULL;
-	unsigned char *tmp;
+	FILE* file = NULL;
+	IVC* image = NULL;
+	unsigned char* tmp;
 	char tok[20];
 	long int size, sizeofbinarydata;
 	int width, height, channels;
@@ -253,7 +253,7 @@ IVC *vc_read_image(char *filename)
 				return NULL;
 
 			sizeofbinarydata = (image->width / 8 + ((image->width % 8) ? 1 : 0)) * image->height;
-			tmp = (unsigned char *)malloc(sizeofbinarydata);
+			tmp = (unsigned char*)malloc(sizeofbinarydata);
 			if (tmp == NULL)
 				return 0;
 
@@ -332,10 +332,10 @@ IVC *vc_read_image(char *filename)
 	return image;
 }
 
-int vc_write_image(char *filename, IVC *image)
+int vc_write_image(char* filename, IVC* image)
 {
-	FILE *file = NULL;
-	unsigned char *tmp;
+	FILE* file = NULL;
+	unsigned char* tmp;
 	long int totalbytes, sizeofbinarydata;
 
 	if (image == NULL)
@@ -346,7 +346,7 @@ int vc_write_image(char *filename, IVC *image)
 		if (image->levels == 1)
 		{
 			sizeofbinarydata = (image->width / 8 + ((image->width % 8) ? 1 : 0)) * image->height + 1;
-			tmp = (unsigned char *)malloc(sizeofbinarydata);
+			tmp = (unsigned char*)malloc(sizeofbinarydata);
 			if (tmp == NULL)
 				return 0;
 
@@ -397,16 +397,16 @@ int vc_write_image(char *filename, IVC *image)
 
 #pragma region Save and Run
 
-char *conc(const char *first, char *second)
+char* conc(const char* first, char* second)
 {
-	char *aux = _strdup(first);
+	char* aux = _strdup(first);
 	strcat(aux, second);
 	return aux;
 }
 
-void save(char *filename, IVC *image)
+void save(char* filename, IVC* image)
 {
-	char *filepath = conc(results, filename);
+	char* filepath = conc(results, filename);
 	vc_write_image(filepath, image);
 }
 
@@ -414,7 +414,7 @@ void save(char *filename, IVC *image)
 
 #pragma region RGB to GRAY
 
-int vc_rgb_gray(IVC *original, IVC *converted)
+int vc_rgb_gray(IVC* original, IVC* converted)
 {
 	int pos, posAux, x, y;
 	for (x = 0; x < original->width; x++)
@@ -434,7 +434,7 @@ int vc_rgb_gray(IVC *original, IVC *converted)
 
 #pragma region Manuseamento de channels
 
-int vc_only_red(IVC *original, IVC *converted)
+int vc_only_red(IVC* original, IVC* converted)
 {
 	int pos, x, y;
 
@@ -452,7 +452,7 @@ int vc_only_red(IVC *original, IVC *converted)
 	return 0;
 }
 
-int vc_only_green(IVC *original, IVC *converted)
+int vc_only_green(IVC* original, IVC* converted)
 {
 	int pos, x, y;
 
@@ -470,7 +470,7 @@ int vc_only_green(IVC *original, IVC *converted)
 	return 0;
 }
 
-int vc_only_blue(IVC *original, IVC *converted)
+int vc_only_blue(IVC* original, IVC* converted)
 {
 	int pos, x, y;
 
@@ -488,7 +488,7 @@ int vc_only_blue(IVC *original, IVC *converted)
 	return 0;
 }
 
-int vc_remove_red(IVC *original, IVC *converted)
+int vc_remove_red(IVC* original, IVC* converted)
 {
 	int pos, x, y;
 
@@ -506,7 +506,7 @@ int vc_remove_red(IVC *original, IVC *converted)
 	return 0;
 }
 
-int vc_remove_green(IVC *original, IVC *converted)
+int vc_remove_green(IVC* original, IVC* converted)
 {
 	int pos, x, y;
 
@@ -523,7 +523,7 @@ int vc_remove_green(IVC *original, IVC *converted)
 	return 0;
 }
 
-int vc_remove_blue(IVC *original, IVC *converted)
+int vc_remove_blue(IVC* original, IVC* converted)
 {
 	int pos, x, y;
 
@@ -545,7 +545,7 @@ int vc_remove_blue(IVC *original, IVC *converted)
 
 #pragma region Binary
 
-float vc_media(IVC *original)
+float vc_media(IVC* original)
 {
 	int pos, x, y;
 	float media = 0;
@@ -571,7 +571,7 @@ float vc_media(IVC *original)
 	return (media / (original->bytesperline * original->height));
 }
 
-int vc_rgb_gray_to_binary_global_mean(IVC *original, IVC *converted)
+int vc_rgb_gray_to_binary_global_mean(IVC* original, IVC* converted)
 {
 	int pos, posAux, x, y;
 	float media = vc_media(original), meanAux = 0;
@@ -590,7 +590,7 @@ int vc_rgb_gray_to_binary_global_mean(IVC *original, IVC *converted)
 	return 1;
 }
 
-int vc_rgb_gray_to_binary(IVC *original, IVC *converted, int threshold)
+int vc_rgb_gray_to_binary(IVC* original, IVC* converted, int threshold)
 {
 	int pos, posAux, x, y;
 	float meanAux;
@@ -609,7 +609,7 @@ int vc_rgb_gray_to_binary(IVC *original, IVC *converted, int threshold)
 	return 1;
 }
 
-int vc_gray_to_binary_bernsen(IVC *original, IVC *converted, int kernel, int c)
+int vc_gray_to_binary_bernsen(IVC* original, IVC* converted, int kernel, int c)
 {
 	long int pos, posk;
 	float meanAux;
@@ -665,7 +665,7 @@ int vc_gray_to_binary_bernsen(IVC *original, IVC *converted, int kernel, int c)
 	return 1;
 }
 
-int vc_binary_dilate(IVC *original, IVC *converted, int kernel)
+int vc_binary_dilate(IVC* original, IVC* converted, int kernel)
 {
 	long int pos, posk;
 	float meanAux;
@@ -702,7 +702,7 @@ int vc_binary_dilate(IVC *original, IVC *converted, int kernel)
 	return 1;
 }
 
-int vc_binary_erode(IVC *original, IVC *converted, int kernel)
+int vc_binary_erode(IVC* original, IVC* converted, int kernel)
 {
 	long int pos, posk;
 	float meanAux;
@@ -739,9 +739,9 @@ int vc_binary_erode(IVC *original, IVC *converted, int kernel)
 	return 1;
 }
 
-int vc_binary_open(IVC *original, IVC *converted, int kernel)
+int vc_binary_open(IVC* original, IVC* converted, int kernel)
 {
-	IVC *temp;
+	IVC* temp;
 	temp = vc_image_new(original->width, original->height, 1, 255);
 
 	//Erode
@@ -752,9 +752,9 @@ int vc_binary_open(IVC *original, IVC *converted, int kernel)
 	return 1;
 }
 
-int vc_binary_close(IVC *original, IVC *converted, int kernel)
+int vc_binary_close(IVC* original, IVC* converted, int kernel)
 {
-	IVC *temp;
+	IVC* temp;
 	temp = vc_image_new(original->width, original->height, 1, 255);
 
 	//Dilate
@@ -839,8 +839,8 @@ OVC* vc_binary_blob_labelling(IVC* original, IVC* converted, int* nlabels)
 				(*nlabels) = -1;
 				return NULL;
 			}
-				
-													// Se o pixel foi marcado
+
+			// Se o pixel foi marcado
 			if (datadst[posX] != 0)
 			{
 				if ((datadst[posA] == 0) && (datadst[posB] == 0) && (datadst[posC] == 0) && (datadst[posD] == 0))
@@ -944,9 +944,9 @@ OVC* vc_binary_blob_labelling(IVC* original, IVC* converted, int* nlabels)
 	return blobs;
 }
 
-int vc_binary_blob_info(IVC *src, OVC *blobs, int nblobs)
+int vc_binary_blob_info(IVC* src, OVC* blobs, int nblobs)
 {
-	unsigned char *data = (unsigned char *)src->data;
+	unsigned char* data = (unsigned char*)src->data;
 	int width = src->width;
 	int height = src->height;
 	int bytesperline = src->bytesperline;
@@ -1027,10 +1027,10 @@ int vc_binary_blob_info(IVC *src, OVC *blobs, int nblobs)
 #pragma region Edge
 
 // Detecção de contornos pelos operadores Prewitt
-int vc_gray_edge_prewitt(IVC *src, IVC *dst, float th) // th = [0.001, 1.000]
+int vc_gray_edge_prewitt(IVC* src, IVC* dst, float th) // th = [0.001, 1.000]
 {
-	unsigned char *datasrc = (unsigned char *)src->data;
-	unsigned char *datadst = (unsigned char *)dst->data;
+	unsigned char* datasrc = (unsigned char*)src->data;
+	unsigned char* datadst = (unsigned char*)dst->data;
 	int width = src->width;
 	int height = src->height;
 	int bytesperline = src->bytesperline;
@@ -1040,7 +1040,7 @@ int vc_gray_edge_prewitt(IVC *src, IVC *dst, float th) // th = [0.001, 1.000]
 	int i, size;
 	int histmax, histthreshold;
 	int sumx, sumy;
-	int hist[256] = {0};
+	int hist[256] = { 0 };
 
 	// Verificação de erros
 	if ((src->width <= 0) || (src->height <= 0) || (src->data == NULL))
@@ -1124,11 +1124,11 @@ int vc_gray_edge_prewitt(IVC *src, IVC *dst, float th) // th = [0.001, 1.000]
 	return 1;
 }
 
-int vc_binary_edge_prewitt(IVC *src, IVC *dst, float th) // th = [0.001 a 1.000]
+int vc_binary_edge_prewitt(IVC* src, IVC* dst, float th) // th = [0.001 a 1.000]
 {
 
-	unsigned char *datasrc = (unsigned char *)src->data;
-	unsigned char *datadst = (unsigned char *)dst->data;
+	unsigned char* datasrc = (unsigned char*)src->data;
+	unsigned char* datadst = (unsigned char*)dst->data;
 	int width = src->width;
 	int height = src->height;
 	int bytesperline = src->bytesperline;
@@ -1138,9 +1138,9 @@ int vc_binary_edge_prewitt(IVC *src, IVC *dst, float th) // th = [0.001 a 1.000]
 	int i, size;
 	int histmax, histthreshold;
 	int sumx, sumy;
-	int hist[256] = {0};
+	int hist[256] = { 0 };
 
-	IVC *dest = vc_image_new(dst->width, dst->height, dst->channels, dst->levels);
+	IVC* dest = vc_image_new(dst->width, dst->height, dst->channels, dst->levels);
 
 	//verificao de erros
 	if ((src->width <= 0) || (src->height <= 0) || (src->data == NULL))
@@ -1372,7 +1372,7 @@ float* vc_histogram_array(IVC* original) {
 	float* array;
 
 	//Inicializa array
-	array = (float *)malloc(max + 1);
+	array = (float*)malloc(max + 1);
 	array[0] = 0;
 	for (int i = 0; i < max; i++) array[i] = 0;
 
@@ -1434,7 +1434,7 @@ IVC* vc_gray_histogram_show(IVC* original) {
 int vc_rgb_histogram_show(IVC* original, IVC* converted) {
 	//VARS
 	int pos, y, x, max = original->levels + 1, i;
-	float *r, *g, *b;
+	float* r, * g, * b;
 	int maior_r = 0, maior_g = 0, maior_b = 0;
 	int n = original->width * original->height;
 	r = (float*)malloc(max * sizeof(float));
@@ -1562,7 +1562,7 @@ int vc_gray_histogram_equalization(IVC* original, IVC* converted) {
 int vc_rgb_histogram_equalization(IVC* original, IVC* converted) {
 	//VARS
 	int pos, y, x, max = original->levels + 1, i;
-	float *r, *g, *b;
+	float* r, * g, * b;
 	int n = original->width * original->height;
 	r = (float*)malloc(max * sizeof(float));
 	g = (float*)malloc(max * sizeof(float));
@@ -1610,7 +1610,7 @@ int vc_rgb_histogram_equalization(IVC* original, IVC* converted) {
 
 #pragma region Filters
 
-int vc_gray_lowpass_mean_filter(IVC *original, IVC *converted)
+int vc_gray_lowpass_mean_filter(IVC* original, IVC* converted)
 {
 	long int pos, posk, count = 0;
 	float meanAux;
@@ -1619,9 +1619,9 @@ int vc_gray_lowpass_mean_filter(IVC *original, IVC *converted)
 	int x, kx, y, ky;
 	int width = original->width, height = original->height;
 	float threshold;
-	int mask[9] = {1, 1, 1,
+	int mask[9] = { 1, 1, 1,
 				   1, 1, 1,
-				   1, 1, 1};
+				   1, 1, 1 };
 
 	if ((original->width <= 0) || (original->height <= 0) || (original->data == NULL))
 		return 0;
@@ -1700,11 +1700,11 @@ int vc_gray_lowpass_median_filter(IVC* original, IVC* converted)
 					array[count++] = original->data[posk];
 				}
 			//
-			for (int i = 0; i < 9; i++)    
-				for (int j = 0; j < 9; j++)     
-					if (array[j] > array[i])               
+			for (int i = 0; i < 9; i++)
+				for (int j = 0; j < 9; j++)
+					if (array[j] > array[i])
 					{
-						int tmp = array[i];   
+						int tmp = array[i];
 						array[i] = array[j];
 						array[j] = tmp;
 					}
@@ -1745,11 +1745,11 @@ int vc_trab_fase1(IVC* original)
 	return detected_y;
 }
 
-OVC *vc_trab_fase2(IVC *original, IVC *license, int *detected_line)
+OVC* vc_trab_fase2(IVC* original, IVC* license, int* detected_line)
 {
 
 	//VARS
-	IVC *prewitt, *filter, *clean;
+	IVC* prewitt, * filter, * clean;
 	int nLabels = 0, max = 0, index = -1, i = 0;
 	int x, y, pos;
 
@@ -1771,7 +1771,7 @@ OVC *vc_trab_fase2(IVC *original, IVC *license, int *detected_line)
 	//vc_write_image("fase2_filter.pgm", filter);
 
 	//Get Blobs
-	OVC *blobs = vc_binary_blob_labelling(filter, license, &nLabels);
+	OVC* blobs = vc_binary_blob_labelling(filter, license, &nLabels);
 	if (nLabels == -1)
 	{
 		detected_line = -1;
@@ -1819,12 +1819,12 @@ OVC *vc_trab_fase2(IVC *original, IVC *license, int *detected_line)
 }
 
 int vc_getBlob_Histogram(IVC* license, OVC* blob_character) {
-	int x, y, pos,posk, minBlob_Y, minBlob_X, maxBlob_Y, maxBlob_X, max, yy, xx;
+	int x, y, pos, posk, minBlob_Y, minBlob_X, maxBlob_Y, maxBlob_X, max, yy, xx;
 
 	//vc_write_image("license_teste.pgm", license);
-	
+
 	IVC* dilate = vc_image_new(license->width, license->height, 1, 255);
-	IVC* temp = NULL, *temp2 = NULL;
+	IVC* temp = NULL, * temp2 = NULL;
 	vc_binary_erode(license, dilate, 3);
 	int blob = 2;
 	int black = 0, white = 0;
@@ -1836,13 +1836,13 @@ int vc_getBlob_Histogram(IVC* license, OVC* blob_character) {
 		minBlob_X = blob_character[i].x;
 		maxBlob_Y = blob_character[i].y + blob_character[i].height;
 		maxBlob_X = blob_character[i].x + blob_character[i].width;
-		
+
 		if (i == blob)
 		{
 			temp = vc_image_new(blob_character[i].width, blob_character[i].height, 1, 255);
 			temp2 = vc_image_new(blob_character[i].width, blob_character[i].height, 1, 255);
 		}
-			
+
 		yy = 0;
 		xx = 0;
 		white = 0;
@@ -1893,7 +1893,7 @@ int vc_getBlob_Histogram(IVC* license, OVC* blob_character) {
 	}
 	printf("\n\n");
 	return 0;
-	
+
 }
 
 int vc_getBlob_Histogram_1(IVC* license, OVC* blob_character) {
@@ -1917,7 +1917,7 @@ int vc_getBlob_Histogram_1(IVC* license, OVC* blob_character) {
 		for (y = minBlob_Y; y < maxBlob_Y; y++)
 		{
 			pos = y * license->bytesperline + 2 * license->channels;
-			if(license->data[pos] == 255)
+			if (license->data[pos] == 255)
 				count++;
 		}
 
@@ -1928,13 +1928,32 @@ int vc_getBlob_Histogram_1(IVC* license, OVC* blob_character) {
 	return 0;
 }
 
-char vc_get_character(int horizontal, int invert_horizontal, int vertical, int max_pixels){
+int vc_resizeBlob(IVC* original, OVC* blob, IVC* result) {
+	int pos, pretos = 0, brancos = 0;
+	int i = 0;
+	int w = 0;
+
+	int altura = original->height / AlturaBlob;
+	int largura = original->width / LarguraBlob;
+
+	for(int yy = i * altura; yy < (i + 1) * altura; yy++)
+		for (int xx = w * largura; xx < (w + 1) * largura; xx++)
+		{
+			pos = yy * original->bytesperline + xx * original->channels;
+
+			original->data[pos] == 0 ? pretos++ : brancos++;
+		}
+
+	return 0;
+}
+
+char vc_get_character(int horizontal, int invert_horizontal, int vertical, int max_pixels) {
 
 	int p_h = (horizontal * 100) / vertical;
 	int p_i_h = (invert_horizontal * 100) / vertical;
 	//int p_v = (vertical * 100) / max_pixels;
 	int p_t = ((horizontal + invert_horizontal + vertical) * 100) / vertical;
-	printf("H : %d , IH : %d \t|\t ", p_h,p_i_h);
+	printf("H : %d , IH : %d \t|\t ", p_h, p_i_h);
 	printf("Tot : %d \n", p_t);
 
 	//Q
@@ -1946,7 +1965,7 @@ char vc_get_character(int horizontal, int invert_horizontal, int vertical, int m
 	//U
 	else if (p_h >= 5 && p_h <= 11 && p_i_h >= 11 && p_i_h <= 17)
 		return 'U';
-	
+
 	//2
 	else if (p_h >= 52 && p_h <= 58 && p_i_h >= 37 && p_i_h <= 43)
 		return '2';
@@ -2012,7 +2031,7 @@ char vc_analise_blob_2(IVC* license, OVC blob_character)
 	}
 	dvH /= blob_character.height;
 	dvH = sqrt(dvH);
-	
+
 
 	//Inverted Horizontal
 	for (y = minBlob_Y; y < maxBlob_Y; y++)
@@ -2029,12 +2048,10 @@ char vc_analise_blob_2(IVC* license, OVC blob_character)
 	}
 	dvIH /= blob_character.height;
 	dvIH = sqrt(dvIH);
-			
-	printf("H : %d , IH : %d\n",dvH,dvIH);
+
+	printf("H : %d , IH : %d\n", dvH, dvIH);
 	return 'a';
 }
-
-
 
 char vc_analise_blob(IVC* license, OVC blob_character)
 {
@@ -2051,9 +2068,9 @@ char vc_analise_blob(IVC* license, OVC blob_character)
 		for (x = minBlob_X; x < maxBlob_X; x++)
 		{
 			pos = y * license->bytesperline + x * license->channels;
-			if (license->data[pos] == 0) 
+			if (license->data[pos] == 0)
 				countH++;
-			else 
+			else
 				break;
 		}
 
@@ -2076,11 +2093,11 @@ char vc_analise_blob(IVC* license, OVC blob_character)
 				totBlack++;
 		}
 
-	return vc_get_character(countH,countIH, totBlack, max_pixels);
+	return vc_get_character(countH, countIH, totBlack, max_pixels);
 }
 
-int vc_save_blob(IVC* license, OVC* blob_character){
-	int x, y, tempX, tempY, pos, posO, countV = 0,countH = 0, blob = 2;
+int vc_save_blob(IVC* license, OVC* blob_character) {
+	int x, y, tempX, tempY, pos, posO, countV = 0, countH = 0, blob = 2;
 	int minBlob_X, minBlob_Y, maxBlob_X, maxBlob_Y;
 	int width, height;
 	IVC* saved_blob = vc_image_new(blob_character[blob].width, blob_character[blob].height, 1, 255);
@@ -2094,12 +2111,12 @@ int vc_save_blob(IVC* license, OVC* blob_character){
 
 	for (int i = 0; i < 6; i++)
 	{
-		printf("Blob %d --> ",i);
+		printf("Blob %d --> ", i);
 		characters[i] = vc_analise_blob_2(license, blob_character[i]);
 		if (characters[i] == '-')
 			return 0;
 	}
-	
+
 	printf("license: %s\n", characters);
 	getchar();
 
@@ -2142,13 +2159,13 @@ int vc_save_blob(IVC* license, OVC* blob_character){
 
 
 	//Save blob
-	
+
 	*/
 	vc_write_image("blob_cut_3.pgm", saved_blob);
 	return 0;
 }
 
-int vc_trab_fase3(IVC *original, IVC *result, IVC *license, OVC *blob, OVC *blob_character, int th)
+int vc_trab_fase3(IVC* original, IVC* result, IVC* license, OVC* blob, OVC* blob_character, int th)
 {
 	if (blob == NULL)
 		return -1;
@@ -2157,8 +2174,8 @@ int vc_trab_fase3(IVC *original, IVC *result, IVC *license, OVC *blob, OVC *blob
 	int nLabels = 0;
 	int x, y, pos, sum = 0, min, max, i = 0, j = 0;
 	//
-	OVC *blobs;
-	IVC *prewitt, *binary, *bImg, * erode;
+	OVC* blobs;
+	IVC* prewitt, * binary, * bImg, * erode;
 
 	//Inicialize
 	prewitt = vc_image_new(original->width, original->height, 1, 255);
@@ -2178,7 +2195,7 @@ int vc_trab_fase3(IVC *original, IVC *result, IVC *license, OVC *blob, OVC *blob
 	vc_rgb_gray_to_binary(prewitt, binary, th);
 	//vc_write_image("fase3_prewitt_2.pgm", binary);
 
-	vc_binary_erode(binary,erode, 3);
+	vc_binary_erode(binary, erode, 3);
 	vc_write_image("fase3_erode.pgm", erode);
 
 	//Get blobs
@@ -2252,7 +2269,7 @@ int vc_trab_fase3(IVC *original, IVC *result, IVC *license, OVC *blob, OVC *blob
 	//Verifica se o total de blobs é igual a 6
 	if (count == 6)
 	{
-		
+
 
 		count = 0;
 		for (i = 0; i < nLabels; i++)
@@ -2261,7 +2278,7 @@ int vc_trab_fase3(IVC *original, IVC *result, IVC *license, OVC *blob, OVC *blob
 
 		vc_save_blob(erode, blob_character);
 		//vc_getBlob_Histogram_1(binary, blob_character);
-		
+
 		//VARS AUX
 		int bx = blob->x,					//x min
 			by = blob->y,					//y min
@@ -2393,7 +2410,7 @@ int vc_trab_fase3(IVC *original, IVC *result, IVC *license, OVC *blob, OVC *blob
 }
 
 //Função prewitt para uma gama de cinzas
-int vc_trab_prewitt(IVC *original, IVC *converted)
+int vc_trab_prewitt(IVC* original, IVC* converted)
 {
 	int x, y, pos;
 	int width = original->width, height = original->height;
@@ -2448,7 +2465,7 @@ int vc_trab_prewitt(IVC *original, IVC *converted)
 }
 
 //Deteta a linha que contem o maior numero de transições entre preto e branco
-int vc_trab_detect(IVC *original)
+int vc_trab_detect(IVC* original)
 {
 
 	//VARS
@@ -2458,7 +2475,7 @@ int vc_trab_detect(IVC *original)
 	int check = 0;
 	check = original->data[0];
 
-	IVC *temp = vc_image_new(original->width, original->height, 1, 255);
+	IVC* temp = vc_image_new(original->width, original->height, 1, 255);
 
 	//Calcula linha com maior numero de transições
 	for (y = 0; y < original->height; y++)
@@ -2497,8 +2514,6 @@ int vc_trab_detect(IVC *original)
 	//vc_write_image(aux, temp);
 	return yMax;
 }
-
-
 
 int vc_convert_bgr_rgb(IVC* original) {
 	int x, y, pos;
@@ -2586,8 +2601,8 @@ int vc_binary_dilate_x(IVC* original, IVC* converted, int kernel) {
 	return 1;
 }
 
-int vc_increase_contraste(IVC *original, IVC *converted, int perc) {
-	int pos, x, y, count= 0;
+int vc_increase_contraste(IVC* original, IVC* converted, int perc) {
+	int pos, x, y, count = 0;
 
 	for (y = 0; y < original->height; y++)
 		for (x = 0; x < original->width; x++) {

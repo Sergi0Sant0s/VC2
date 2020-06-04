@@ -12,6 +12,9 @@ Trabalho Realizado por:
 
 #pragma region Structs
 
+#define AlturaBlob 40
+#define LarguraBlob 20
+
 typedef struct
 {
 	unsigned char *data;

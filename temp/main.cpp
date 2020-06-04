@@ -135,7 +135,7 @@ int main(void)
 		//vc_increase_contraste(gray, contraste, 10);
 		//vc_write_image((char *)"constraste.pgm", contraste);
 
-		if (video.nframe > 400)
+		if (video.nframe > 0)
 		{
 			detected_line = vc_trab_fase1(gray);
 			printf("Fase 1 concluida\n");
