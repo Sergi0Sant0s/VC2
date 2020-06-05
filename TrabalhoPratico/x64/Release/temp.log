@@ -1,0 +1,18 @@
+﻿  Functions.cpp
+C:\Users\Sergio\Desktop\vc_teste\temp\temp\vc.h(104,1): warning C4005: 'MAX': macro redefinition
+C:\opencv\build\include\opencv2\core\cvdef.h(469): message : see previous definition of 'MAX'
+C:\Users\Sergio\Desktop\vc_teste\temp\temp\vc.h(105,1): warning C4005: 'MIN': macro redefinition
+C:\opencv\build\include\opencv2\core\cvdef.h(465): message : see previous definition of 'MIN'
+C:\Users\Sergio\Desktop\vc_teste\temp\temp\Functions.cpp(308,20): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+C:\Users\Sergio\Desktop\vc_teste\temp\temp\Functions.cpp(309,20): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+C:\Users\Sergio\Desktop\vc_teste\temp\temp\Functions.cpp(310,40): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+C:\Users\Sergio\Desktop\vc_teste\temp\temp\Functions.cpp(311,41): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+C:\Users\Sergio\Desktop\vc_teste\temp\temp\Functions.cpp(133,12): warning C4101: 'pos': unreferenced local variable
+C:\Users\Sergio\Desktop\vc_teste\temp\temp\Functions.cpp(133,31): warning C4101: 'max': unreferenced local variable
+C:\Users\Sergio\Desktop\vc_teste\temp\temp\Functions.cpp(133,26): warning C4101: 'min': unreferenced local variable
+  Generating code
+  1 of 322 functions ( 0.3%) were compiled, the rest were copied from previous compilation.
+    0 functions were new in current compilation
+    1 functions had inline decision re-evaluated but remain unchanged
+  Finished generating code
+  temp.vcxproj -> C:\Users\Sergio\Desktop\vc_teste\temp\x64\Release\temp.exe

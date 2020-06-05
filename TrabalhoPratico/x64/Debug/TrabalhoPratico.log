@@ -1,0 +1,87 @@
+﻿C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\MSBuild\Microsoft\VC\v160\Microsoft.CppBuild.targets(467,5): warning MSB8028: The intermediate directory (x64\Debug\) contains files shared from another project (temp.vcxproj).  This can lead to incorrect clean and rebuild behavior.
+  Functions.cpp
+C:\Users\Sergio\Desktop\vc_teste\temp\TrabalhoPratico\vc.h(104,1): warning C4005: 'MAX': macro redefinition
+C:\opencv\build\include\opencv2\core\cvdef.h(469): message : see previous definition of 'MAX'
+C:\Users\Sergio\Desktop\vc_teste\temp\TrabalhoPratico\vc.h(105,1): warning C4005: 'MIN': macro redefinition
+C:\opencv\build\include\opencv2\core\cvdef.h(465): message : see previous definition of 'MIN'
+C:\Users\Sergio\Desktop\vc_teste\temp\TrabalhoPratico\Functions.cpp(308,20): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+C:\Users\Sergio\Desktop\vc_teste\temp\TrabalhoPratico\Functions.cpp(309,20): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+C:\Users\Sergio\Desktop\vc_teste\temp\TrabalhoPratico\Functions.cpp(310,40): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+C:\Users\Sergio\Desktop\vc_teste\temp\TrabalhoPratico\Functions.cpp(311,41): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+C:\Users\Sergio\Desktop\vc_teste\temp\TrabalhoPratico\Functions.cpp(133,12): warning C4101: 'pos': unreferenced local variable
+C:\Users\Sergio\Desktop\vc_teste\temp\TrabalhoPratico\Functions.cpp(133,31): warning C4101: 'max': unreferenced local variable
+C:\Users\Sergio\Desktop\vc_teste\temp\TrabalhoPratico\Functions.cpp(133,26): warning C4101: 'min': unreferenced local variable
+  main.cpp
+C:\Users\Sergio\Desktop\vc_teste\temp\TrabalhoPratico\vc.h(104,1): warning C4005: 'MAX': macro redefinition
+C:\opencv\build\include\opencv2\core\cvdef.h(469): message : see previous definition of 'MAX'
+C:\Users\Sergio\Desktop\vc_teste\temp\TrabalhoPratico\vc.h(105,1): warning C4005: 'MIN': macro redefinition
+C:\opencv\build\include\opencv2\core\cvdef.h(465): message : see previous definition of 'MIN'
+C:\Users\Sergio\Desktop\vc_teste\temp\TrabalhoPratico\main.cpp(172,19): warning C4305: 'initializing': truncation from 'double' to 'float'
+  Generating Code...
+C:\Users\Sergio\Desktop\vc_teste\temp\TrabalhoPratico\Functions.cpp(126): warning C4172: returning address of local variable or temporary: license
+  vc.c
+C:\Users\Sergio\Desktop\vc_teste\temp\TrabalhoPratico\vc.c(267,70): warning C4267: '=': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\Sergio\Desktop\vc_teste\temp\TrabalhoPratico\vc.c(311,66): warning C4267: '=': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\Sergio\Desktop\vc_teste\temp\TrabalhoPratico\vc.c(426,129): warning C4244: '=': conversion from 'double' to 'unsigned char', possible loss of data
+C:\Users\Sergio\Desktop\vc_teste\temp\TrabalhoPratico\vc.c(585,158): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+C:\Users\Sergio\Desktop\vc_teste\temp\TrabalhoPratico\vc.c(604,158): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+C:\Users\Sergio\Desktop\vc_teste\temp\TrabalhoPratico\vc.c(615,8): warning C4101: 'meanAux': unreferenced local variable
+C:\Users\Sergio\Desktop\vc_teste\temp\TrabalhoPratico\vc.c(671,8): warning C4101: 'meanAux': unreferenced local variable
+C:\Users\Sergio\Desktop\vc_teste\temp\TrabalhoPratico\vc.c(676,8): warning C4101: 'threshold': unreferenced local variable
+C:\Users\Sergio\Desktop\vc_teste\temp\TrabalhoPratico\vc.c(708,8): warning C4101: 'meanAux': unreferenced local variable
+C:\Users\Sergio\Desktop\vc_teste\temp\TrabalhoPratico\vc.c(713,8): warning C4101: 'threshold': unreferenced local variable
+C:\Users\Sergio\Desktop\vc_teste\temp\TrabalhoPratico\vc.c(1403,41): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
+C:\Users\Sergio\Desktop\vc_teste\temp\TrabalhoPratico\vc.c(1410,9): warning C4477: 'printf' : format string '%d' requires an argument of type 'int', but variadic argument 1 has type 'double'
+C:\Users\Sergio\Desktop\vc_teste\temp\TrabalhoPratico\vc.c(1410,9): warning C4477: 'printf' : format string '%d' requires an argument of type 'int', but variadic argument 2 has type 'double'
+C:\Users\Sergio\Desktop\vc_teste\temp\TrabalhoPratico\vc.c(1466,37): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
+C:\Users\Sergio\Desktop\vc_teste\temp\TrabalhoPratico\vc.c(1467,37): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
+C:\Users\Sergio\Desktop\vc_teste\temp\TrabalhoPratico\vc.c(1468,37): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
+C:\Users\Sergio\Desktop\vc_teste\temp\TrabalhoPratico\vc.c(1555,54): warning C4244: '=': conversion from 'float' to 'unsigned char', possible loss of data
+C:\Users\Sergio\Desktop\vc_teste\temp\TrabalhoPratico\vc.c(1603,79): warning C4244: '=': conversion from 'float' to 'unsigned char', possible loss of data
+C:\Users\Sergio\Desktop\vc_teste\temp\TrabalhoPratico\vc.c(1604,91): warning C4244: '=': conversion from 'float' to 'unsigned char', possible loss of data
+C:\Users\Sergio\Desktop\vc_teste\temp\TrabalhoPratico\vc.c(1605,91): warning C4244: '=': conversion from 'float' to 'unsigned char', possible loss of data
+C:\Users\Sergio\Desktop\vc_teste\temp\TrabalhoPratico\vc.c(1656,34): warning C4244: '=': conversion from 'float' to 'unsigned char', possible loss of data
+C:\Users\Sergio\Desktop\vc_teste\temp\TrabalhoPratico\vc.c(1621,8): warning C4101: 'threshold': unreferenced local variable
+C:\Users\Sergio\Desktop\vc_teste\temp\TrabalhoPratico\vc.c(1669,8): warning C4101: 'threshold': unreferenced local variable
+C:\Users\Sergio\Desktop\vc_teste\temp\TrabalhoPratico\vc.c(1734,47): warning C4305: 'function': truncation from 'double' to 'float'
+C:\Users\Sergio\Desktop\vc_teste\temp\TrabalhoPratico\vc.c(1748,54): warning C4028: formal parameter 3 different from declaration
+C:\Users\Sergio\Desktop\vc_teste\temp\TrabalhoPratico\vc.c(1762,46): warning C4047: 'function': 'int' differs in levels of indirection from 'int *'
+C:\Users\Sergio\Desktop\vc_teste\temp\TrabalhoPratico\vc.c(1762,46): warning C4024: 'vc_trab_clean': different types for formal and actual parameter 3
+C:\Users\Sergio\Desktop\vc_teste\temp\TrabalhoPratico\vc.c(1766,46): warning C4305: 'function': truncation from 'double' to 'float'
+C:\Users\Sergio\Desktop\vc_teste\temp\TrabalhoPratico\vc.c(1777,21): warning C4047: '=': 'int *' differs in levels of indirection from 'int'
+C:\Users\Sergio\Desktop\vc_teste\temp\TrabalhoPratico\vc.c(1785,34): warning C4047: '<': 'int' differs in levels of indirection from 'int *'
+C:\Users\Sergio\Desktop\vc_teste\temp\TrabalhoPratico\vc.c(1785,83): warning C4047: '>': 'int' differs in levels of indirection from 'int *'
+C:\Users\Sergio\Desktop\vc_teste\temp\TrabalhoPratico\vc.c(1828,9): warning C4473: 'printf' : not enough arguments passed for format string
+C:\Users\Sergio\Desktop\vc_teste\temp\TrabalhoPratico\vc.c(1828,9): message : placeholders and their parameters expect 3 variadic arguments, but 2 were provided
+C:\Users\Sergio\Desktop\vc_teste\temp\TrabalhoPratico\vc.c(1828,9): message : the missing variadic argument 3 is required by format string '%d'
+C:\Users\Sergio\Desktop\vc_teste\temp\TrabalhoPratico\vc.c(1902,32): warning C4244: '+=': conversion from 'double' to 'int', possible loss of data
+C:\Users\Sergio\Desktop\vc_teste\temp\TrabalhoPratico\vc.c(1905,17): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+C:\Users\Sergio\Desktop\vc_teste\temp\TrabalhoPratico\vc.c(1919,35): warning C4244: '+=': conversion from 'double' to 'int', possible loss of data
+C:\Users\Sergio\Desktop\vc_teste\temp\TrabalhoPratico\vc.c(1922,19): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+C:\Users\Sergio\Desktop\vc_teste\temp\TrabalhoPratico\vc.c(1933,17): warning C4101: 'minBlob_Y': unreferenced local variable
+C:\Users\Sergio\Desktop\vc_teste\temp\TrabalhoPratico\vc.c(1933,39): warning C4101: 'maxBlob_Y': unreferenced local variable
+C:\Users\Sergio\Desktop\vc_teste\temp\TrabalhoPratico\vc.c(1933,28): warning C4101: 'maxBlob_X': unreferenced local variable
+C:\Users\Sergio\Desktop\vc_teste\temp\TrabalhoPratico\vc.c(1933,6): warning C4101: 'minBlob_X': unreferenced local variable
+C:\Users\Sergio\Desktop\vc_teste\temp\TrabalhoPratico\vc.c(1988,47): warning C4047: '=': 'char *' differs in levels of indirection from 'char'
+C:\Users\Sergio\Desktop\vc_teste\temp\TrabalhoPratico\vc.c(1993,9): warning C4477: 'printf' : format string '%s' requires an argument of type 'char *', but variadic argument 1 has type 'char **'
+C:\Users\Sergio\Desktop\vc_teste\temp\TrabalhoPratico\vc.c(1983,13): warning C4101: 'height': unreferenced local variable
+C:\Users\Sergio\Desktop\vc_teste\temp\TrabalhoPratico\vc.c(1981,26): warning C4101: 'pos': unreferenced local variable
+C:\Users\Sergio\Desktop\vc_teste\temp\TrabalhoPratico\vc.c(1983,6): warning C4101: 'width': unreferenced local variable
+C:\Users\Sergio\Desktop\vc_teste\temp\TrabalhoPratico\vc.c(1982,17): warning C4101: 'minBlob_Y': unreferenced local variable
+C:\Users\Sergio\Desktop\vc_teste\temp\TrabalhoPratico\vc.c(1981,19): warning C4101: 'tempY': unreferenced local variable
+C:\Users\Sergio\Desktop\vc_teste\temp\TrabalhoPratico\vc.c(1981,12): warning C4101: 'tempX': unreferenced local variable
+C:\Users\Sergio\Desktop\vc_teste\temp\TrabalhoPratico\vc.c(1981,31): warning C4101: 'posO': unreferenced local variable
+C:\Users\Sergio\Desktop\vc_teste\temp\TrabalhoPratico\vc.c(1981,9): warning C4101: 'y': unreferenced local variable
+C:\Users\Sergio\Desktop\vc_teste\temp\TrabalhoPratico\vc.c(1982,39): warning C4101: 'maxBlob_Y': unreferenced local variable
+C:\Users\Sergio\Desktop\vc_teste\temp\TrabalhoPratico\vc.c(1981,6): warning C4101: 'x': unreferenced local variable
+C:\Users\Sergio\Desktop\vc_teste\temp\TrabalhoPratico\vc.c(1982,28): warning C4101: 'maxBlob_X': unreferenced local variable
+C:\Users\Sergio\Desktop\vc_teste\temp\TrabalhoPratico\vc.c(1982,6): warning C4101: 'minBlob_X': unreferenced local variable
+C:\Users\Sergio\Desktop\vc_teste\temp\TrabalhoPratico\vc.c(2131,1): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+C:\Users\Sergio\Desktop\vc_teste\temp\TrabalhoPratico\vc.c(2132,1): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
+C:\Users\Sergio\Desktop\vc_teste\temp\TrabalhoPratico\vc.c(2133,1): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
+C:\Users\Sergio\Desktop\vc_teste\temp\TrabalhoPratico\vc.c(2157,44): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+C:\Users\Sergio\Desktop\vc_teste\temp\TrabalhoPratico\vc.c(2162,36): warning C4244: '=': conversion from 'float' to 'unsigned char', possible loss of data
+C:\Users\Sergio\Desktop\vc_teste\temp\TrabalhoPratico\vc.c(2179,129): warning C4244: '=': conversion from 'double' to 'unsigned char', possible loss of data
+C:\Users\Sergio\Desktop\vc_teste\temp\TrabalhoPratico\vc.c(1995): warning C4716: 'vc_save_blob': must return a value
+C:\Users\Sergio\Desktop\vc_teste\temp\TrabalhoPratico\vc.c(2119): warning C4716: 'vc_convert_bgr_rgb': must return a value
+  TrabalhoPratico.vcxproj -> C:\Users\Sergio\Desktop\vc_teste\temp\x64\Debug\TrabalhoPratico.exe

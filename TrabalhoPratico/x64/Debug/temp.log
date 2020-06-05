@@ -1,0 +1,7 @@
+﻿  main.cpp
+C:\Users\Sergio\Desktop\vc_teste\temp\temp\vc.h(104,1): warning C4005: 'MAX': macro redefinition
+C:\opencv\build\include\opencv2\core\cvdef.h(469): message : see previous definition of 'MAX'
+C:\Users\Sergio\Desktop\vc_teste\temp\temp\vc.h(105,1): warning C4005: 'MIN': macro redefinition
+C:\opencv\build\include\opencv2\core\cvdef.h(465): message : see previous definition of 'MIN'
+C:\Users\Sergio\Desktop\vc_teste\temp\temp\main.cpp(201,19): warning C4305: 'initializing': truncation from 'double' to 'float'
+  temp.vcxproj -> C:\Users\Sergio\Desktop\vc_teste\temp\x64\Debug\temp.exe
